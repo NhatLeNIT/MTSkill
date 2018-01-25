@@ -1,0 +1,18 @@
+======== LAYOUT ========
+# 1. Xây dựng wrapper layout nằm ở giữa screen
+# 2. Xây dựng layout khi vừa vào game (giao diện có "How to Play" và nút "Start Game") (layout index)
+# 3. Xây dựng layout khi game bắt đầu (play)
+4. Hiện thị Logo ở 2 layout index và play
+# 5. Hiển thị button change font size ở cả 2 layout index và play
+# 6. Hiển thị button disable/enable âm thanh ở cả 2 layout index và play
+7. Hiển thị cloud ở nhiều vị trí
+8. Hiển thị airplane
+9. Hiển thị bird
+10. Hiển thị button pause/continue game
+11. Hiển thị Fuel Counter
+12. Hiển thị Start Counter
+10. Hiển thị Timer
+11. Hiển thị Stars
+12. Parachutes
+
+* LƯU Ý: các tasks thực hiện theo description trong file desc-summary.txt.

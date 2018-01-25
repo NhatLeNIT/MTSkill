@@ -1,0 +1,428 @@
+/*----------------------------------------*/
+/*  1.  DEFAULT CSS
+/*----------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button {
+    border-radius: 5px;
+    border: none;
+    height: 40px;
+    display: inline-block;
+}
+button:hover {
+    cursor: pointer;
+    background: #f39c12;
+    position: relative;
+}
+button:disabled {
+    cursor: not-allowed;
+}
+button:focus {
+    outline: none;
+}
+
+.ripple-button:hover>.wave,
+.ripple-button:hover>.wave-option {
+    animation: ripple-in 2s;
+}
+
+.wave {
+    position: absolute;
+    width: 250px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    opacity: 0.5;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+.wave-option {
+    width: 68px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+@keyframes ripple-in {
+    0% {
+        transform: scaleX(0);
+    }
+    20% {
+        transform: scaleX(1);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scaleX(1);
+        opacity: 0;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+#wrapper {
+    /* border: 1px solid red; */
+    width: 1024px;
+    height: 728px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -364px;
+    margin-left: -512px;
+    background: #303030;
+}
+
+
+/*----------------------------------------*/
+/*  2. LOGO
+/*----------------------------------------*/
+
+#logo {
+    margin-top: 50px;
+    background: url(../images/logo/SkyAngel.png) center no-repeat;
+    width: 100%;
+    height: 460px;
+    background-size: cover;
+}
+
+
+/*----------------------------------------*/
+/*  3. CONTROL PANEL
+/*----------------------------------------*/
+
+#control-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    z-index: 9999;
+    padding: 10px;
+}
+
+#control-panel button {
+    width: 68px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+}
+#control-panel button:last-child {
+    margin-right: 0;
+}
+#control-panel #btn-option-left {
+    width: 20%;
+    float: left;
+}
+#control-panel #statistic {
+    width: 60%;
+    float: left;
+    text-align: center;
+}
+#control-panel #btn-option-right {
+    width: 20%;
+    float: left;
+    text-align: right;
+}
+
+/*----------------------------------------*/
+/*  4. STATISTIC
+/*----------------------------------------*/
+
+
+#statistic #star-counter {
+    float: right;
+    position: relative;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    padding: 0 5px;
+}
+
+#statistic #star-counter::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 105%;
+    background: url(../images/star-icon.png);
+    background-size: cover;
+}
+
+#statistic #logo-txt {
+    font-size: 38px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#statistic #timer {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    float: left;
+}
+
+#statistic #timer::before {
+    /* content: "\f017"; */
+    /* font-family: "FontAwesome"; */
+    content: "Time:";
+    color: #0994F1;
+    margin-right: 10px;
+}
+
+/*----------------------------------------*/
+/* 5. NAV BUTTON
+/*----------------------------------------*/
+
+#nav-btn {}
+
+#nav-btn button {
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 60px;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+}
+
+#nav-btn button:first-child {
+    margin-bottom: 18px;
+}
+
+#nav-btn button>span {
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+
+#nav-btn button>span.start::before {
+    content: "\f01d";
+    font-size: 40px;
+    font-family: 'FontAwesome';
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+#nav-btn button>span.help::before {
+    content: "\f29c";
+    font-size: 40px;
+    font-family: 'FontAwesome';
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+
+/*----------------------------------------*/
+/*  6. CONTAINER PLAY GAME
+/*----------------------------------------*/
+
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #71D1F7;
+    overflow: hidden;
+}
+
+.flip-x {
+    transform: scaleX(-1);
+}
+
+[class|="elm"] {
+    position: absolute;
+}
+
+
+/*----------------------------------------*/
+/*  7. AIRPLANE
+/*----------------------------------------*/
+
+.elm-airplane {
+    /* width: 140px; */
+    /* height: 66px; */
+    /* top: 300px; */
+    /* left: 100px; */
+    background: url(../images/airplane/airplane.png);
+    background-size: cover;
+    z-index: 9999;
+}
+
+
+/*----------------------------------------*/
+/*  8. CLOUD
+/*----------------------------------------*/
+
+.elm-cloud {
+    width: 80px;
+    height: 44px;
+}
+
+
+/* .elm-cloud-1 {
+    background: url(../images/cloud/cloud-1.png);
+    top: 100px;
+    left: 200px;
+    background-size: cover;
+}
+/*
+
+/*----------------------------------------*/
+/*  9. BIRD
+/*----------------------------------------*/
+
+.elm-bird {
+    /* width: 50px;
+    height: 35px; */
+    z-index: 1;
+}
+
+
+/* .elm-bird-1 {
+    background: url(../images/bird/bird-1.gif);
+    background-size: cover;
+    top: 400px;
+    left: 400px;
+}
+/*
+
+/*----------------------------------------*/
+/*  10. PARACHUTE
+/*----------------------------------------*/
+
+.elm-parachute {
+    /* width: 30px; */
+    /* height: 39px; */
+    /* top: 200px; */
+    /* left: 800px; */
+    background: url(../images/parachutes/parachutes.png);
+    background-size: cover;
+    animation: rotateParachute 0.5s infinite;
+    z-index: 1;
+}
+
+@keyframes rotateParachute {
+    0% {
+        transform: rotate(-5deg);
+    }
+    25% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+
+/*----------------------------------------*/
+/*  11. STAR
+/*----------------------------------------*/
+
+.elm-star {
+    /* width: 35px; */
+    /* height: 35px; */
+    /* left: 500px; */
+    /* top: 500px; */
+    background: url(../images/star/star2.png);
+    background-size: cover;
+    animation: animateStar 1s steps(7) infinite;
+    z-index: 1;
+}
+
+@keyframes animateStar {
+    from {
+        background-position-x: 0;
+    }
+    to {
+        background-position: -246px;
+    }
+}
+
+/*----------------------------------------*/
+
+/*  12. FUEL COUNTER
+/*----------------------------------------*/
+
+#fuel-counter {
+    position: absolute;
+    bottom: 10px;
+    left: 45%;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: blue;
+    width: 120px;
+    height: 107px;
+    display: block;
+    background: url(../images/fuel-counter/fuel-counter-1.png);
+    background-size: cover;
+}
+
+
+/*----------------------------------------*/
+/*  13. DIALOG
+/*----------------------------------------*/
+
+#dialog-form input {
+    padding: 5px;
+    width: 84%;
+}
+
+.my-dialog button {
+    margin-top: 18px;
+    padding: 5px;
+}
+
+#dialog-form button:disabled {
+    cursor: not-allowed;
+}
+
+.ui-dialog-title {
+    width: 100% !important;
+}
+
+.ui-dialog-titlebar {
+    text-align: center;
+}
+
+#dialog-ranking #list-rank {
+    height: 320px;
+    overflow: auto;
+}
+
+#dialog-ranking #list-rank table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#dialog-ranking #list-rank table tr {
+    border-bottom: 1px #d5d5d5 solid;
+}
+
+#dialog-ranking #list-rank table tr:hover {
+    background: #e8e8e8;
+    cursor: pointer;
+}
+
+#dialog-ranking #list-rank table td {
+    padding: 5px 0;
+}

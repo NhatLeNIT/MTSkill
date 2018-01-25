@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Play Game</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="images/star-icon.png" rel="icon">
+    <link href="js/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="control-panel">
+            <div id="btn-option-left">
+                <button id="btn-sizeUp" class="ripple-button">
+                    <span class="wave wave-option"> </span>
+                    <span class="btn-size-up">Size up</span>
+                </button>
+                <button id="btn-sizeDown" class="ripple-button ">
+                    <span class="wave wave-option"> </span>
+                    <span class="btn-size-down">Size down</span>
+                </button>
+            </div>
+            <div id="statistic">
+                <span id="timer">00:00</span>
+                <span id="logo-txt">SKY ANGEL</span>
+                <span id="star-counter"></span>
+            </div>
+            <div id="btn-option-right">
+                <button id="btn-volume" class="ripple-button">
+                    <span class="wave wave-option"></span>
+                    <span id="btn-volume-text" class="btn-volume-on">Mute</span>
+                </button>
+
+                <button id="btn-pause" id="btn" class="ripple-button ">
+                    <span class="wave wave-option"></span>
+                    <span id="btn-pause-text">Pause</span>
+                </button>
+
+            </div>
+        </div>
+
+        <div id="container">
+            <!-- <span class="elm-cloud-1"></span> -->
+            <!-- <span class="elm-bird-1"></span> -->
+            <!-- <span class="elm-bird-2"></span> -->
+            <!-- <span class="elm-bird-3"></span> -->
+            <!-- <span class="elm-bird-4 flip-x"></span> -->
+            <!-- <span class="elm-airplane"></span> -->
+            <!-- <span class="elm-cloud-3"></span> -->
+            <!-- <span class="elm-cloud-2"></span> -->
+            <!-- <span class="elm-parachute"></span> -->
+            <!-- <span class="elm-star"></span> -->
+        </div>
+        <div id="fuel-counter"> </div>
+
+        <div id="dialog-form" class="my-dialog" title="GAME OVER!">
+            <form onsubmit="return false">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name" class="">
+                <div class="text-center">
+                    <button type="button" id="btnContinue" class="ripple-button" disabled>
+                        <span class="wave wave-option"> </span>
+                        <span>Continue</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="dialog-ranking" class="my-dialog" title="RANKING">
+            <div id="list-rank">
+                <!-- <table>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Start</th>
+                        <th>Time</th>
+                    </tr>
+                    <tr class="border-bottom">
+                        <td class="text-center">1</td>
+                        <td>Name</td>
+                        <td class="text-center">Start</td>
+                        <td class="text-center">Time</td>
+                    </tr>
+    
+                </table> -->
+            </div>
+            <div class="text-center">
+                <button type="button" id="btnStartGame" class="ripple-button">
+                    <span class="wave wave-option"> </span>
+                    <span>Start Game</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="js/config.js"></script>
+    <!-- <script src="js/element.class.js"></script> -->
+    <!-- <script src="js/component.js"></script> -->
+    <script src="js/helper.js"></script>
+    <script src="js/component.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

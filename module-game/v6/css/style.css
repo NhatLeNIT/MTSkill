@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper {
+    width: 1024px;
+    height: 728px;
+    background: #303030;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#logo-start {
+    width: 80%;
+    height: 65%;
+    background: url(../images/logo/SkyAngel.png);
+    background-size: cover;
+    margin: auto;
+}
+button {
+    border: none;
+    outline-style: none;
+}
+button:hover {
+    background: #f39c12;
+    cursor: pointer;
+}
+button:disabled {
+    cursor: not-allowed;
+}
+#nav button {
+    width: 250px;
+    height: 70px;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+#nav button:first-child {
+    margin-bottom: 20px;
+}
+.ripple-button {
+    position: relative;
+}
+.ripple-button:hover > .wave {
+    animation: rippleButton 2s;
+}
+.wave {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #fff;
+    opacity: 0.5;
+    left: 0;
+    top: 0;
+    border-radius: inherit;
+    transform: scaleX(0);
+}
+@keyframes rippleButton {
+    0% { transform: scaleX(0)}
+    20% { transform: scaleX(1); opacity: 0.3}
+    100% { transform: scaleX(1); opacity: 0}
+}
+#game-area {
+    background: #7bcef6;
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#panel {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+}
+#panel #panel-left {
+    width: 20%;
+    float: left;
+}
+#panel #panel-right {
+    width: 20%;
+    float: right;
+    text-align: right;
+}
+#panel #panel-center {
+    margin: 0 20%;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+.btn-option {
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+}
+#panel-center #timer {
+    float: left;
+}
+#panel-center #timer::before {
+    content: "Timer ";
+    color: #007fff;
+}
+#panel-center #star-counter {
+    float: right;
+}
+#panel-center #star-counter::after {
+    content: "";
+    background: url(../images/star-icon.png);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+#panel-center #logo-in-game{
+    background: url(../images/logo/logo-in-game.png);
+    background-size: cover;
+    width: 120px;
+    height: 77px;
+    display: inline-block;
+}
+#fuel-counter {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 1;
+}
+#fuel-counter #fuel {
+    background: url(../images/fuel/fuel.png);
+    background-size: cover;
+    width: 133px;
+    height: 90%;
+    margin: auto;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+}
+#fuel-counter #fuel #fuel-number {
+    position: absolute;
+    top: 50%;
+}
+#fuel-counter #fuel #fuel-gauge {
+    background: url(../images/fuel/fuel-gauge.png);
+    background-size: cover;
+    width: 13px;
+    height: 75%;
+    margin-top: 20%;
+    display: inline-block;
+    transform-origin: center bottom;
+    transform: rotate(-50deg);
+    transition: transform 0.1s 0s linear;
+}
+[class|="elm"] {
+    position: absolute;
+}
+.elm-airplane {
+    background: url(../images/airplane.png);
+    background-size: cover;
+    width: 150px;
+    height: 72px;
+    left: 100px;
+    top: 300px;
+    z-index: 8;
+}
+.elm-cloud {
+    background: url(../images/cloud/cloud-1.png);
+    background-size: cover;
+    width: 100px;
+    height: 50px;
+    left: 600px;
+    top: 300px;
+}
+.elm-bird {
+    background: url(../images/bird/bird-1.png);
+    background-size: cover;
+    width: 55px;
+    height: 38px;
+    left: 300px;
+    top: 300px;
+    transform: scaleX(-1);
+    animation: animateBird 1s steps(4) infinite;
+}
+@keyframes animateBird {
+    from {background-position-x: 0}
+    from {background-position-x: 224px}
+}
+.elm-star {
+    background: url(../images/star.png);
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+    left: 400px;
+    top: 300px;
+    animation: animateStar 1s steps(7) infinite;
+}
+@keyframes animateStar {
+    from {background-position-x: 0}
+    from {background-position-x: 253px}
+}
+.elm-parachute {
+    background: url(../images/parachute.png);
+    background-size: cover;
+    width: 28px;
+    height: 37px;
+    left: 500px;
+    top: 300px;
+    animation: animateParachute 0.8s infinite;
+}
+@keyframes animateParachute {
+    0% {transform: rotate(-8deg)}
+    25% {transform: rotate(0deg)}
+    50% {transform: rotate(8deg)}
+    75% {transform: rotate(0deg)}
+    100% {transform: rotate(-8deg)}
+}
+.ui-dialog-titlebar {
+    text-align: center;
+}
+.my-dialog {
+    display: none;
+}
+#help-dialog {
+    position: relative;
+}
+#help-dialog #btn-continue {
+    position: absolute;
+    bottom: 10px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    left: 36%;
+}
+#form-dialog { text-align: center}
+#form-dialog input {
+    padding: 5px;
+    width: 80%;
+}
+#form-dialog button {
+    margin-top: 10px;
+}
+#ranking-dialog table{
+    border-collapse: collapse;
+    width: 100%;
+}
+#ranking-dialog {
+    text-align: center;
+}
+#ranking-dialog table tr {
+    border-bottom: solid 1px #d5d5d5;
+}
+#ranking-dialog table td {
+    padding: 5px;
+}
+#ranking-dialog #list{ height: 288px; overflow: auto}
+#ranking-dialog button { width: 100px; margin-top: 10px}

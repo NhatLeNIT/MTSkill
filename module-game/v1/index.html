@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sky Angel</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="images/star-icon.png" rel="icon">
+    <link href="js/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="logo"></div>
+
+        <div id="nav-btn">
+            <button class="ripple-button" onclick="location.href='play.html'">
+                <span class="wave"></span>
+                <span class="start">Start Game</span>
+            </button>
+            <button id="btnHowToPlay" class="ripple-button">
+                <span class="wave"></span>
+                <span class="help">How to Play</span>
+            </button>
+        </div>
+        <div id="dialog">
+                <div id="dialog-step1" class="my-dialog" title="HOW TO PLAY">
+                    <p>1. Move the airplane using the arrows keys.</p>
+                    <div class="text-center">
+                        <button type="button" id="btnNext1" class=" ripple-button">
+                            <span class="wave wave-option"> </span>
+                            <span>Next Step</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="dialog-step2" class="my-dialog" title="HOW TO PLAY">
+                    <p>2. The timer present the time lapsed.</p>
+                    <div class="text-center">
+                        <button type="button" id="btnNext2" class="  ripple-button">
+                            <span class="wave wave-option"> </span>
+                            <span>Next Step</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="dialog-step3" class="my-dialog" title="HOW TO PLAY">
+                    <p>3. The fuel counter show the remain fuel.</p>
+                    <div class="text-center">
+                        <button type="button" id="btnNext3" class=" ripple-button">
+                            <span class="wave wave-option"> </span>
+                            <span>Next Step</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="dialog-step4" class="my-dialog" title="HOW TO PLAY">
+                    <p>4. During the flight, the aircraft need to avoid the birds that are presented in the sky. If the airplane hit
+                        a bird, the game is over.</p>
+                    <div class="text-center">
+                        <button type="button" id="btnNext4" class=" ripple-button">
+                            <span class="wave wave-option"> </span>
+                            <span>Next Step</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="dialog-step5" class="my-dialog" title="HOW TO PLAY">
+                    <p>5. During the flight, the aircraft need to collect fuel and stars in the sky</p>
+                    <div class="text-center">
+                        <button type="button" id="btnNext5" class=" ripple-button">
+                            <span class="wave wave-option"> </span>
+                            <span>Next Step</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="dialog-step6" class="my-dialog" title="HOW TO PLAY">
+                    <p>6. You can pause the game clicking in a button pause, or pressing the space bar.</p>
+                    <div class="text-center">
+                        <button type="button" id="btnNext6" class=" ripple-button">
+                            <span class="wave wave-option"> </span>
+                            <span>Next Step</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="dialog-step7" class="my-dialog" title="HOW TO PLAY">
+                    <p>7. Go beyond all limits.
+                        <br> Flight in Sky Angel Challenge...
+                    </p>
+                    <div class="text-center">
+                        <button type="button" id="btnNext7" class=" ripple-button">
+                            <span class="wave wave-option"> </span>
+                            <span>Start Game</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </div>
+  
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btnHowToPlay").click(function () {
+                step1.dialog("open");
+            })
+
+        })
+        step1 = $("#dialog-step1").dialog({
+            autoOpen: false,
+            height: 150,
+            width: 350,
+            show: {
+                effect: "blind",
+                duration: 400
+            },
+            open: function () {
+                $('#btnNext1').click(function () {
+                    step1.dialog("close");
+                    step2.dialog("open");
+                })
+            }
+        })
+        step2 = $("#dialog-step2").dialog({
+            autoOpen: false,
+            height: 150,
+            width: 350,
+            show: {
+                effect: "clip",
+                duration: 400
+            },
+            open: function () {
+                $('#btnNext2').click(function () {
+                    step2.dialog("close");
+                    step3.dialog("open");
+                })
+            }
+        })
+        step3 = $("#dialog-step3").dialog({
+            autoOpen: false,
+            height: 150,
+            width: 350,
+            show: {
+                effect: "clip",
+                duration: 400
+            },
+            open: function () {
+                $('#btnNext3').click(function () {
+                    step3.dialog("close");
+                    step4.dialog("open");
+                })
+            }
+        })
+        step4 = $("#dialog-step4").dialog({
+            autoOpen: false,
+            height: 200,
+            width: 350,
+            show: {
+                effect: "clip",
+                duration: 400
+            },
+            open: function () {
+                $('#btnNext4').click(function () {
+                    step4.dialog("close");
+                    step5.dialog("open");
+                })
+            }
+        })
+        step5 = $("#dialog-step5").dialog({
+            autoOpen: false,
+            height: 160,
+            width: 350,
+            show: {
+                effect: "clip",
+                duration: 400
+            },
+            open: function () {
+                $('#btnNext5').click(function () {
+                    step5.dialog("close");
+                    step6.dialog("open");
+                })
+            }
+        })
+        step6 = $("#dialog-step6").dialog({
+            autoOpen: false,
+            height: 160,
+            width: 350,
+            show: {
+                effect: "clip",
+                duration: 400
+            },
+            open: function () {
+                $('#btnNext6').click(function () {
+                    step6.dialog("close");
+                    step7.dialog("open");
+                })
+            }
+        })
+        step7 = $("#dialog-step7").dialog({
+            autoOpen: false,
+            height: 160,
+            width: 350,
+            show: {
+                effect: "clip",
+                duration: 400
+            },
+            open: function () {
+                $('#btnNext7').click(function () {
+                    window.location.href = "play.html";
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>

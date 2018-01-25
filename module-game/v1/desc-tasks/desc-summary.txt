@@ -1,0 +1,69 @@
+======== OVERVIEW OF PROJECT ========
+- Game có tên là Sky Angel.
+- Game được phát triển sử dụng HTML, CSS để thiết kế layout và sử dụng Javascript và các thử viện mở để lập trình các chức năng của trò chơi.
+- Một vài tập tin media sẽ được cung cấp trong các file zip. Bạn có thể tạo mới hoặc chỉnh sửa các file media để dùng cho game của bạn.
+- Game sẽ được phát triển với độ phân giải 1024 x 728 pixels (chiều rộng x chiều cao). Nếu game được mở trong màn hình lớn, game sẽ nằm chính giữa màn hình (theo chiều ngang và chiều dọc).
+
+======== DESCRIPTION OF PROJECT ========
+Game Sky Angel sử dụng các thành phần được mô tả dưới đây:
+1. Airplane: được điều khiển bởi user.
+2. Clouds: di chuyển từ phải sang trái, để tạo ra cảm giác chuyển động của máy bay trên trời.
+3. Birds: đối tượng này Airplane cần phải né tránh.
+4. Stars: Airplane thu thập để tăng star's counter.
+5. Parachutes: Airplane cần thu thập đối tượng này để tăng cấp nhiên liệu (level fuel).
+6. Fuel Counter: Đối tượng cho biết đang hiện có bao nhiêu nhiên liệu.
+7. Start Counter: Đối tượng hiển thị số sao mà airplane đã thu thập được.
+8. Timer: Đối tượng cho biết thời gian mà airplane đã bay được.
+9. Sound Button: dùng để tắt, bật âm anh trong game.
+10. Font Size Buttons: có 2 nút Up, Down dùng để tăng hoặc giảm font size.
+11. Pause/Continue button: Nút dùng để tạm dừng hoặc tiếp tục trò chơi.
+12. Logo: logo đã được cung cấp sẽ hiển thị trong game.
+
+======== TASKS OF PROJECT ========
+** THIẾT KẾ LAYOUT
+- Game được khởi động với giao diện có "How to Play" và nút "Start Game". Các hướng dẫn phải trình bày theo các bước với animated.
+- Tất cả các nút phải có hiệu ứng khi hover. Backgound của các button khi hover là: #f39c12. Trạng thái hoạt động phải tuân theo ví dụ trong thư mục ripple được cung cấp trong media files.
+- Code HTML, CSS phải tuân thủ các chuẩn W3C quy định về HTML 5 và CSS 3
+
+** CHỨC NĂNG CỦA GAME
+1. Khi nhấn nút "Start Game" trong màn hình lúc khởi động game, game sẽ bắt đầu, airplane sẽ bắt đầu bay vào vị trí, những đám mây sẽ di chuyển từ phải sang trái để tạo cảm giác chuyển động của airplane trên bầu trời. Timer được khởi động cho biết thời gian máy bay đã di chuyển được, lúc này Fuel Counter cũng bắt đầu: trong 1 giây sẽ giảm 1 điểm. Khi trò chơi bắt đầu, có 10 điểm fuel cho người chơi 10 giây để bay.
+2. User có thể sử dụng các phím mũi tên để di chuyển máy bay. Mũi tên trái di chuyển máy bay sang trái, mũi tên phải di chuyển airplane sang phải, mũi tên lên di chuyển máy bay lên, mũi tên xuống di chuyển máy bay xuống. Không thể bay máy bay trừ khi nó có thể nhìn thấy trên màn hình. Airplane không thể bay ra khỏi màn hình theo bất kì hướng nào.
+3. Trong suốt quá trình bay, airplane cần phải tránh bird xuất hiện trên bầu trời. Nếu airplane va chạm 1 con bird thì game kết thúc. Các con bird phải được xuất hiện ở vị trí ngẫu nhiên và chuyển động bay từ phải sang trái. Nên luôn luôn có thể cho airplane né tránh những con bird.
+4. Trong suốt quá trình bay, airplane cần thu thập các parachute và các star rơi từ bầu trời. Mỗi lần thu thập được một parachute thì fuel counter sẽ tăng 10 điểm (10 giây). Mỗi star thu thập được thì star counter sẽ tăng 1 điểm. Star couter bắt đầu với 0 điểm.
+5. Các parachute và star rơi trên đỉnh màn hình xuống (có animated) vào các vị trí ngẫu nhiên
+6. Trong quá trình bay, user có thể tạm dừng trò chơi bằng cách nhấp vào nút pause hoặc bằng cách nhấn space. Khi trò chơi tạm dừng, tất cả các hoạt động và âm thanh phải được dừng lại, nếu người dùng nhấp vào pause hoặc phím space một lần nữa thì game sẽ tiếp tục tại thời điểm đã được tạm dừng trước đó.
+7. Các clouds trong nền cần có animated để tạo cảm giác di chuyển.
+8. Nếu fuel couter chạm đến số 0, game sẽ kết thúc.
+9. Khi game kết thúc, các animation và timer phải ngừng lại, game sẽ cho user nhập tên, user bấm nút "Continute", nút nãy sẽ bị disabled cho đến khi user nhập tên.
+10. Tên user, time bay được, star thu thập được sẽ được gửi lên server bằng cách sử dụng AJAX. Thông tin được gửi lên server theo format sau:
+    10.1 http://xxxxxxxxx/register.php
+    10.2 Method: post
+    10.3 name: tên của user
+    10.4 time: thời gian bay được (integer) tính bằng giây
+    10.5 starts: số sao nhận được (integer)
+11. Register.php sẽ đăng ký thông tin user vào database cùng với các đối thủ cạnh tranh, và sẽ trả về thông tin ở dạng JSON với bảng xếp hạng user. Cấu trúc JSON như sau: 
+    [
+        {"id":"1","name":"Player 1", "time":"20", "stars":"10"},
+        {"id":"2","name":"Player 2","time":"14","stars":"8"}
+    ]
+12. Game sẽ hiển thị bảng xếp hạng cho user và nút "Start Game" cho phép khởi động lại trò chơi.
+13. Ranking sẽ được sắp xếp giảm dần theo số lượng star và time đã bay được. Nếu có nhiều user có cùng số lượng star thu được và cùng một thời điểm thì vị trí trong bảng xếp hạng sẽ bằng nhau. Dữ liệu JSON trả về từ server không được sắp xếp, nhiệm vụ của bạn là hãy sắp xếp và trình bày lại cho user xem.
+14. Để tăng tính tương tác trong game cần sử dụng một số âm thanh:
+    - background.mp3 sử dụng trong quá trình bay.
+    - hit.mp3 được phát khi airplane va chạm bird (game is over)
+    - star.mp3 được phát khi airplane thu thập được một star
+    - finish.mp3 được phát khi hết fuel (game is over)
+15. Tăng khả năng tương tác và trải nghiệm của user trong game tốt nhất.
+16. Để tăng độ thân thiện, trải nghiệm trong game thì phải có các tùy chọn tăng/giảm kích thước font chữ trong màn hình (timer, star's counter, fuel và ranking)
+17. Phải có một tùy chọn để tắt/bật âm thành trong game. Nếu âm thanh bị tắt, không có một âm thanh nào được chơi, nếu âm thanh được mở thì tất cả các âm thanh phải được phát/
+18. Game hoạt động không có lỗi javascript hoặc không có message được hiển thị ở browser console.
+19. Code HTML/CSS và Javascript phải clean và tối ưu để có thể mainternance trong tương lai, sử dụng indentation và comment trong code.
+20. Game hoạt động tốt trên 2 trình duyệt (Google Chrome và Mozilla Firefox). Game sẽ được kiểm tra bằng Google Chrome và tính tương thích sẽ được kiểm tra trong Mozilla Firefox.
+
+======== HOW TO PLAY ========
+1. Di chuyển máy bay bằng cách sử dụng các phím mũi tên;
+2. Trình hẹn giờ có thời gian trôi qua;
+3. Bộ đếm nhiên liệu cho thấy nhiên liệu còn lại;
+4. Trong suốt chuyến bay, máy bay cần phải tránh những con chim được trình bày trên bầu trời. Nếu máy bay đánh một con chim, trò chơi kết thúc;
+5. Trong quá trình bay, máy bay cần thu thập nhiên liệu và sao trên bầu trời;
+6. Bạn có thể tạm dừng trò chơi bằng cách nhấp vào nút tạm dừng, hoặc nhấn phím cách.

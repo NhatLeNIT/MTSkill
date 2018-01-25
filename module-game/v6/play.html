@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="wrapper">
+    <div id="container">
+        <div id="panel">
+            <div id="panel-left">
+                <button id="btn-size-up" class="btn-option ripple-button"><span class="wave"></span>Size Up</button>
+                <button id="btn-size-down" class="btn-option ripple-button"><span class="wave"></span>Size Down</button>
+            </div>
+            <div id="panel-right">
+                <button id="btn-mute" class="btn-option ripple-button"><span class="wave"></span>Mute</button>
+                <button id="btn-pause" class="btn-option ripple-button"><span class="wave"></span>Pause</button>
+            </div>
+            <div id="panel-center">
+                <span id="timer">00:00</span>
+                <span id="logo-in-game"></span>
+                <span id="star-counter">0</span>
+            </div>
+        </div>
+        <div id="fuel-counter">
+            <div id="fuel">
+                <span id="fuel-number">0</span>
+                <span id="fuel-gauge"></span>
+            </div>
+        </div>
+        <div id="game-area">
+            <span id="airplane" class="elm-airplane"></span>
+        </div>
+    </div>
+
+    <div class="my-dialog">
+        <div id="form-dialog" title="GAME OVER">
+            <form action="" onsubmit="return false" autocomplete="off">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name">
+                <button id="btn-continue" disabled class="btn-option ripple-button"><span class="wave"></span>Continue</button>
+            </form>
+        </div>
+        <div id="ranking-dialog" title="RANKING">
+            <div id="list">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Star</th>
+                        <th>Time</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+            <button id="btn-start" class="btn-option ripple-button"><span class="wave"></span>Start Game</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/jquery-ui/jquery-ui.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/helper.js"></script>
+<script src="js/component.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper {
+    width: 1024px;
+    height: 728px;
+    background: #303030;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
+#logo-start {
+    background: url(../images/logo/SkyAngel.png);
+    background-size: cover;
+    width: 80%;
+    height: 65%;
+    margin: auto;
+}
+button {
+    border: none;
+    outline-style: none;
+}
+button:hover {
+    background: #f39c12;
+    cursor: pointer;
+}
+button:disabled {
+    cursor: not-allowed;
+}
+#nav button {
+    width: 250px;
+    height: 60px;
+    font-weight: bold;
+    font-size: 28px;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+#nav button:first-child {
+    margin-bottom: 20px;
+}
+.ripple-button {
+    position: relative;
+}
+.ripple-button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0.5;
+    border-radius: inherit;
+    transform: scaleX(0);
+}
+.ripple-button:hover:before{
+    animation: rippleButton 2s;
+}
+@keyframes rippleButton {
+    0%{transform: scaleX(0);}
+    20%{transform: scaleX(1); opacity: 0.3}
+    100%{transform: scaleX(1);opacity: 0}
+}
+#game-area {
+    background: #6fc4ee;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+#panel {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    padding: 10px;
+
+}
+#panel-left {
+    width: 20%;
+    float: left;
+}
+#panel-right {
+    width: 20%;
+    float: right;
+    text-align: right;
+}
+#panel-center {
+    margin: 0 20%;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+.btn-option {
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+}
+#timer {
+    float: left;
+}
+#timer::before {
+    content: "Timer ";
+    color: #007fff;
+}
+#star-counter {
+    float: right;
+    position: relative;
+    margin-right: 20px;
+}
+#star-counter::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background: url(../images/star-icon.png);
+    background-size: cover;
+    position: absolute;
+    left: 108%;
+}
+#logo-in-game {
+    width: 120px;
+    height: 77px;
+    background: url(../images/logo/logo-in-game.png);
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    top: 10px;
+}
+#fuel-counter {
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+#fuel {
+    background: url(../images/fuel/fuel.png);
+    background-size: cover;
+    height: 90%;
+    width: 135px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+}
+#fuel-number {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+}
+#fuel-gauge {
+    width: 13px;
+    height: 78%;
+    margin-top: 20%;
+    background: url(../images/fuel/fuel-gauge.png);
+    background-size: cover;
+    display: inline-block;
+    transform-origin: center bottom;
+    transform: rotate(-50deg);
+    transition: transform 0.1s 0s linear;
+}
+[class|="elm"] {
+    position: absolute;
+}
+.elm-airplane {
+    width: 140px;
+    height: 58px;
+    background: url(../images/airplane.png);
+    background-size: cover;
+    left: 100px;
+    top:300px;
+    z-index: 8;
+}
+.elm-airplane::before {
+    content: "";
+    background: url(../images/airplane-wing.png);
+    background-size: cover;
+    width: 90px;
+    height: 6px;
+    position: absolute;
+    left: 36px;
+    top: -5px;
+    animation: animateAirplane 0.8s infinite;
+}
+@keyframes animateAirplane {
+    0%{transform: rotateY(0deg)}
+    25%{transform: rotateY(90deg)}
+    50%{transform: rotateY(180deg)}
+    75%{transform: rotateY(90deg)}
+    100%{transform: rotateY(0deg)}
+}
+.elm-cloud {
+    width: 100px;
+    height: 50px;
+    background: url(../images/cloud/cloud-1.png);
+    background-size: cover;
+    left: 300px;
+    top:300px;
+    animation: animateCloud 0.8s infinite;
+}
+@keyframes animateCloud {
+    0%{transform: rotate(0deg)}
+    50%{transform: rotate(3deg)}
+    100%{transform: rotate(0deg)}
+}
+.elm-star{
+    width: 35px;
+    height: 35px;
+    background: url(../images/star.png);
+    background-size: cover;
+    left: 500px;
+    top:300px;
+    animation: animateStar 1s steps(7) infinite;
+}
+@keyframes animateStar {
+    from {background-position: 0}
+    to {background-position: 251px}
+}
+.elm-parachute{
+    width: 28px;
+    height: 36px;
+    background: url(../images/parachute.png);
+    background-size: cover;
+    left: 600px;
+    top:300px;
+    animation: animateParachute 0.8s  infinite;
+}
+@keyframes animateParachute {
+    0%{transform: rotate(-8deg)}
+    25%{transform: rotate(0deg)}
+    50%{transform: rotate(8deg)}
+    75%{transform: rotate(0deg)}
+    100%{transform: rotate(-8deg)}
+}
+.elm-bird{
+    width: 50px;
+    height: 35px;
+    background: url(../images/bird/bird-1.png);
+    background-size: cover;
+    left: 700px;
+    top:300px;
+    animation: animateBird 1s steps(4)  infinite;
+    transform: scaleX(-1);
+}
+@keyframes animateBird {
+    from {background-position: 0}
+    to {background-position: 208px}
+}
+.animation-pause::before {
+    animation-play-state: paused;
+}
+.my-dialog {
+    display: none;
+}
+#form-dialog {
+    text-align: center;
+}
+#form-dialog input{
+    padding: 5px;
+    width: 80%;
+}
+#form-dialog button {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.ui-dialog-titlebar {
+    text-align: center;
+}
+#ranking-dialog table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+#ranking-dialog td, #ranking-dialog th {
+    padding: 5px;
+}
+#ranking-dialog tr {
+    border-bottom: solid 1px #d5d5d5;
+}
+#ranking-dialog tr:hover {
+    cursor: pointer;
+    background: #e8e8e8;
+}
+#ranking-dialog tbody {
+    height: 300px;
+    overflow: auto;
+    display: block;
+}
+#ranking-dialog {
+    text-align: center;
+}
+#ranking-dialog #logo-ranking {
+    background: #303030;
+}
+#ranking-dialog #logo-ranking span {
+    width: 100px;
+    height: 64px;
+    background: url(../images/logo/logo-in-game.png);
+    background-size: cover;
+    display: inline-block;
+}
+#ranking-dialog button{
+    padding: 10px 5px;
+    border-radius: 5px;
+margin-top: 10px;
+}
+#ranking-dialog thead, #ranking-dialog tbody tr {
+    display: table;
+    width:100%;
+    table-layout: fixed;
+}
+#ranking-dialog thead {
+    width: calc(100% - 1em);
+}
+#help-dialog {
+    text-align: center;
+}
+#help-dialog p {
+    text-align: left;
+    margin-bottom: 10px;
+}
+#help-dialog button{
+    padding: 10px 5px;
+    width: 100px;
+    display: inline-block;
+    margin: auto;
+    border-radius: 5px;
+}
+#help-dialog button:first-child {
+    margin-right: 10px;
+}
+.ui-dialog-titlebar-close {
+    display: none;
+}
